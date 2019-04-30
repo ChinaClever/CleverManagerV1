@@ -1,0 +1,851 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\clevermanager.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#include ""afxprint.rc""       // 打印/打印预览资源\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\clevermanager.ico"
+IDR_clevermanagerTYPE   ICON                    "res\\clevermanagerDoc.ico"
+IDI_ICON1               ICON                    "res\\用户管理.ico"
+IDI_ICON4               ICON                    "res\\Tools4.ico"
+IDI_ICON5               ICON                    "res\\入库退货.ico"
+IDI_ICON6               ICON                    "res\\icon6.ico"
+IDI_ICON2               ICON                    "res\\LedOn.ico"
+IDI_ICON3               ICON                    "res\\icon3.ico"
+IDI_ICON7               ICON                    "res\\entry.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",              ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",              ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 clevermanager(&A)...",     ID_APP_ABOUT
+    END
+END
+
+IDR_MOVE_CANBIN MENU 
+BEGIN
+    POPUP "movecanbin"
+    BEGIN
+        MENUITEM "移动",                          ID_MOVECANBIN_32771
+        MENUITEM "锁定",                          ID_MOVECANBIN_32772
+        MENUITEM SEPARATOR
+        MENUITEM "修改",                          ID_MOVECANBIN_EDIT
+        MENUITEM "删除",                          ID_MOVECANBIN_32773
+    END
+END
+
+IDR_ADD_CABIN MENU 
+BEGIN
+    POPUP "增加机柜"
+    BEGIN
+        MENUITEM "新增机柜",                        ID_ADD_CABIN
+        MENUITEM "保存地图",                        ID_SAVE_MAP
+    END
+END
+
+IDR_CABIN_DEVICE MENU 
+BEGIN
+    POPUP "机架设备"
+    BEGIN
+        MENUITEM "增加主机架设备",                     ID_ADD_CABIN_DEVICE
+        MENUITEM "删除主机架设备",                     ID_DEL_CABIN_DEVICE
+        MENUITEM "增加副机架设备",                     ID_ADD_SLAVE_DEVICE
+        MENUITEM "删除副机架设备",                     ID_DEL_SLAVE_DEVICE
+        MENUITEM "增加双路输入设备",                    ID_32876
+        MENUITEM "删除双路输入设备",                    ID_32877
+        MENUITEM "增加四路输入设备",                    ID_32878
+        MENUITEM "删除四路输入设备",                    ID_32879
+    END
+END
+
+IDR_DEV_LIST MENU 
+BEGIN
+    POPUP "设备列表"
+    BEGIN
+        MENUITEM "删除设备",                        ID_DEV_DEL
+        MENUITEM "设备设置",                        ID_DEV_SETNPM
+        MENUITEM "修改设备",                        ID_EDIT_DEVICE
+    END
+END
+
+IDR_RELEASE_ALARM MENU 
+BEGIN
+    POPUP "设备"
+    BEGIN
+        MENUITEM "解除报警",                        ID_DEV_RELEASE
+    END
+END
+
+IDR_ATSEMS MENU 
+BEGIN
+    POPUP "emsats"
+    BEGIN
+        MENUITEM "删除设备",                        ID_EMSATS_DELETE
+        MENUITEM "设备设置",                        ID_EMSATS_SET
+        MENUITEM "修改设备",                        ID_EMSATS_EDIT
+        MENUITEM "解除报警",                        ID_EMSATS_RELEASEALARM
+    END
+END
+
+IDR_OPEN_CLEVERMANAGER_MENU MENU 
+BEGIN
+    POPUP "显示CLEVER Manager"
+    BEGIN
+        MENUITEM "显示CLEVER Manager",            ID_SHOW_CLEVERManager
+        MENUITEM "关闭CLEVER Manager",            ID_CLOSE_CLEVERManager
+    END
+END
+
+IDR_ATSEMS_TWO MENU 
+BEGIN
+    POPUP "emsats"
+    BEGIN
+        MENUITEM "新增EMS",                       ID_EMSATS_ADDEMS_T
+        MENUITEM "新增ATS",                       ID_EMSATS_ADDATS_T
+        MENUITEM "删除设备",                        ID_EMSATS_DELETEDEV_T
+        MENUITEM "解除报警",                        ID_EMSATS_DELALARM_T
+    END
+END
+
+IDR_NPM_ADD_III MENU 
+BEGIN
+    POPUP "addNPM"
+    BEGIN
+        MENUITEM "新增 NPM-III",                  ID_ADDNPM_ADD_III_TWO
+    END
+END
+
+IDR_NPM_ADD_IV MENU 
+BEGIN
+    POPUP "Addnpm2"
+    BEGIN
+        MENUITEM "新增 NPM-IV",                   ID_ADDNPM2_ADDNPM
+    END
+END
+
+IDR_ATS_ADD MENU 
+BEGIN
+    POPUP "ATS"
+    BEGIN
+        MENUITEM "新增ATS",                       ID_ATS_ADD
+    END
+END
+
+IDR_EMS_ADD MENU 
+BEGIN
+    POPUP "EMS"
+    BEGIN
+        MENUITEM "新增EMS",                       ID_EMS_ADD
+    END
+END
+
+IDR_ALARM_EMS MENU 
+BEGIN
+    POPUP "alarm"
+    BEGIN
+        MENUITEM "解除告警",                        ID_ALARM_EMS
+    END
+END
+
+IDR_EMS MENU 
+BEGIN
+    POPUP "ems_edit"
+    BEGIN
+        MENUITEM "删除设备",                        ID_EMS_DELETE
+        MENUITEM "设备设置",                        ID_EMS_SET
+        MENUITEM "修改设备",                        ID_EMS_CHANGE
+    END
+END
+
+IDR_NPM_ADD_V MENU 
+BEGIN
+    POPUP "npm-v"
+    BEGIN
+        MENUITEM "新增NPM-V",                     ID_NPM_V
+    END
+END
+
+IDR_MSPDU_ADD MENU 
+BEGIN
+    POPUP "MS_PDU"
+    BEGIN
+        MENUITEM "新增MS_PDU",                    ID_MS_PDU
+    END
+END
+
+IDR_IPPDU MENU 
+BEGIN
+    POPUP "IP-PDU"
+    BEGIN
+        MENUITEM "新增IP-PDU",                    ID_IP_PDU
+    END
+END
+
+IDR_IP_MENU MENU 
+BEGIN
+    POPUP "IP-PDU"
+    BEGIN
+        MENUITEM "删除设备",                        ID_IP_DEL
+        MENUITEM "设备设置",                        ID_IP_SET
+        MENUITEM "修改设备",                        ID_IP_EDIT
+        MENUITEM "解除报警",                        ID_IP_ALARM
+    END
+END
+
+IDR_CABINET_MENU MENU 
+BEGIN
+    POPUP "机柜"
+    BEGIN
+        POPUP "设备"
+        BEGIN
+            POPUP "NPM"
+            BEGIN
+                MENUITEM "新增",                          ID_NPM_ADD
+                MENUITEM "编辑",                          ID_NPM_EDIT
+            END
+            POPUP "ATS"
+            BEGIN
+                MENUITEM "新增",                          ID_ATS_ADD
+                MENUITEM "编辑",                          ID_ATS_EDIT
+            END
+            POPUP "IP-PDU"
+            BEGIN
+                MENUITEM "新增",                          ID_IP_ADD
+                MENUITEM "编辑",                          ID_IP_EDIT
+            END
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 clevermanager"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "clevermanager 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_DATACENTER_MAP DIALOGEX 0, 0, 330, 75
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_CANBIN_NPM DIALOGEX 0, 0, 402, 504
+STYLE DS_SETFONT | WS_POPUP
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_DATACENTER_INFO DIALOGEX 0, 0, 330, 16
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_DATACENTER_ENV DIALOGEX 0, 0, 330, 16
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_DEVICE_LIST DIALOGEX 0, 0, 241, 64
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_SHOWSELALWAYS | WS_TABSTOP,2,1,60,50
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_TABSTOP,73,2,60,50
+    EDITTEXT        IDC_EDIT1,149,27,54,14,ES_AUTOHSCROLL
+END
+
+IDD_SURE DIALOGEX 0, 0, 238, 136
+STYLE DS_SETFONT | WS_POPUP
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT7,61,17,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,138,18,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,143,33,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,129,111,38,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,85,112,38,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,39,47,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,140,47,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT1,39,85,75,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,149,85,75,12,ES_PASSWORD | ES_AUTOHSCROLL
+END
+
+IDD_SERVER_SET DIALOGEX 0, 0, 427, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_SMTP_USER,23,27,135,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SMTP_PSD,24,10,94,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_SMTP_SERVER,162,28,120,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SMTP_PORT,123,9,101,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_USER_LIST,"SysListView32",LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_TABSTOP,25,45,60,50
+    COMBOBOX        IDC_COMBO1,229,7,94,82,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_WEB_PORT,27,123,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WEB_TIME,80,123,40,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO2,144,123,48,82,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_USER_COUNT,28,156,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_USER_PSD,79,157,40,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_USER_TEL,145,155,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_USER_MAIL,202,155,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_USER_DETAIL,27,179,40,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO3,265,154,48,82,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_LOGS DIALOGEX 0, 0, 448, 55
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,69,3,100,13
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_TABSTOP,217,0,60,50
+    CONTROL         "",IDC_TREE1,"SysTreeView32",WS_TABSTOP,3,0,60,50
+END
+
+IDD_ENERGY_LOG DIALOGEX 0, 0, 479, 344
+STYLE DS_SETFONT | WS_POPUP
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,36,26,63,12
+    CONTROL         "",IDC_DATETIMEPICKER2,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,143,26,63,12
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,63,464,273,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_EDIT8,101,45,77,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,242,26,83,274,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,363,26,28,130,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,221,44,43,130,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO5,311,44,80,130,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_OTHER_DEV DIALOGEX 0, 0, 344, 224
+STYLE DS_SETFONT | WS_POPUP
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_EMSATS DIALOGEX 0, 0, 209, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_SHOWSELALWAYS | WS_TABSTOP,0,0,60,50
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_TABSTOP,78,0,60,50
+END
+
+IDD_STATUS_LOG DIALOGEX 0, 0, 700, 401
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,45,24,75,12
+    EDITTEXT        IDC_EDIT2,293,24,22,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,377,24,74,259,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_DATETIMEPICKER2,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,45,42,75,12
+    EDITTEXT        IDC_EDIT8,171,42,79,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO2,171,21,80,252,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_POP_INFO DIALOGEX 0, 0, 271, 170
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+END
+
+IDD_OVERTIME DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "试用版CleverManager"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,129,69,50,14
+    LTEXT           "此版本的试用日期为2015年7月30号，请注意试用时间。",IDC_STATIC,19,17,152,43
+END
+
+IDD_OUTPUTLOG DIALOGEX 0, 0, 198, 132
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,69,30,84,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,69,50,84,14
+    CONTROL         "",IDC_DATETIMEPICKER2,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,69,74,84,14
+END
+
+IDD_ALARMLOG DIALOGEX 0, 0, 198, 132
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,67,34,101,16,ES_AUTOHSCROLL
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,67,54,101,14
+    CONTROL         "",IDC_DATETIMEPICKER2,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,67,76,101,14
+END
+
+IDD_SHOW DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    SCROLLBAR       SB_VERT_SHOW,146,17,19,66,SBS_VERT
+END
+
+IDD_SHOW_TITLE DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_CABINETDLG DIALOGEX 0, 0, 504, 282
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "clevermanager.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "clevermanager.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CANBIN_NPM, DIALOG
+    BEGIN
+        RIGHTMARGIN, 392
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_SURE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 237
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_SERVER_SET, DIALOG
+    BEGIN
+        RIGHTMARGIN, 412
+        BOTTOMMARGIN, 280
+    END
+
+    IDD_LOGS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 330
+        BOTTOMMARGIN, 16
+    END
+
+    IDD_ENERGY_LOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 417
+        BOTTOMMARGIN, 343
+    END
+
+    IDD_OTHER_DEV, DIALOG
+    BEGIN
+        RIGHTMARGIN, 330
+        BOTTOMMARGIN, 16
+    END
+
+    IDD_EMSATS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 16
+    END
+
+    IDD_STATUS_LOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 693
+        BOTTOMMARGIN, 394
+    END
+
+    IDD_POP_INFO, DIALOG
+    BEGIN
+        RIGHTMARGIN, 270
+    END
+
+    IDD_OVERTIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_OUTPUTLOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_SHOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_SHOW_TITLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_CABINETDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 497
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 275
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\bitmap1.bmp"
+IDB_BITMAP2             BITMAP                  "res\\bitmap2.bmp"
+IDB_BITMAP3             BITMAP                  "res\\year.bmp"
+IDB_BITMAP4             BITMAP                  "res\\mon.bmp"
+IDB_BITMAP5             BITMAP                  "res\\day.bmp"
+IDB_BITMAP6             BITMAP                  "res\\red.bmp"
+IDB_BITMAP7             BITMAP                  "res\\green.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 初始化失败。请确保 OLE 库是正确的版本。"
+    IDC_MAIN_TAB            "1"
+    LIST_TIMER              "list"
+    MAP_TIMER               "timer"
+    ENV_TIMER               "timeerenv"
+    CABIN_TIMER             "CABIN"
+    SEND_MSG_WRITELOG       "WRITE LOGS"
+    EMS_ATS_TIMER           "atsems"
+    IDS_LOGS_TIME           "IDS_LOGS_TIME"
+    IDS_DEL_OBJ_MEM         "IDS_DEL_OBJ_MEM"
+    WM_TRAY                 "WM_USER+100"
+    ALARM_TIME              "告警图片时间"
+END
+
+STRINGTABLE 
+BEGIN
+    LIS_TIME                "lis"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "clevermanager\n\nclevermanager\n\n\nclevermanager.Document\nclevermanager.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "clevermanager"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE 
+BEGIN
+    SHOW_TIME               "滚动窗口"
+    LIST_LOG_TIMER          "状态刷新时间"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\clevermanager.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"         // 标准组件
+#include "afxprint.rc"       // 打印/打印预览资源
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
