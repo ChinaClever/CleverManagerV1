@@ -25,7 +25,11 @@ public:
 	CImageList	m_cImageListNormal32;
 	float cur[3];
 	int vol[3];
-	int TH[6];
+	int TH[8];//梁業1-3 物業1-3 梁業4 物業4
+	CString Door1;
+	CString Door2;
+	CString Water;
+	CString Smoke;
 	int energy[3];
 	CSnmpObj *ipselect;
 	int slaveselect;

@@ -13,7 +13,7 @@
 // 有关此类的实现，请参阅 clevermanager.cpp
 
 //#define DEMO    1
-#define VER    "版本:1.2.0-C"
+#define VER    "版本:1.2.1-C"
 struct datacenter
 {
 	CString name;

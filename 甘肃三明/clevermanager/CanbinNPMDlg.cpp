@@ -307,7 +307,7 @@ BOOL CCanbinNPMDlg::OnEraseBkgnd(CDC* pDC)
 		name.Format("L1电流:%.1fA",master->Tcur[masterindex][0]);
 		BkDc.TextOut(10,680,name);
 		name.Empty();
-		name.Format("水禁:%s",master->Water[masterindex]);
+		name.Format("水禁:%s",master->Water[masterindex]=="None."?"没有":master->Water[masterindex]=="Alarm."?"报警":"正常");
 		BkDc.TextOut(10,700,name);
 
 		name.Empty();
@@ -319,15 +319,15 @@ BOOL CCanbinNPMDlg::OnEraseBkgnd(CDC* pDC)
 		BkDc.TextOut(10,740,name);
 
 		name.Empty();
-		name.Format("门禁1:%s",master->Door1[masterindex]);
+		name.Format("门禁1:%s",master->Door1[masterindex]=="None."?"没有":master->Door1[masterindex]=="Opened."?"打开":"正常");
 		BkDc.TextOut(100,660,name);
 
 		name.Empty();
-		name.Format("门禁2:%s",master->Door2[masterindex]);
+		name.Format("门禁2:%s",master->Door2[masterindex]=="None."?"没有":master->Door2[masterindex]=="Opened."?"打开":"正常");
 		BkDc.TextOut(100,680,name);
 
 		name.Empty();
-		name.Format("烟雾:%s",master->Smoke[masterindex]);
+		name.Format("烟雾:%s",master->Smoke[masterindex]=="None."?"没有":master->Smoke[masterindex]=="Alarm."?"报警":"正常");
 		BkDc.TextOut(100,700,name);
 
 
@@ -349,7 +349,7 @@ BOOL CCanbinNPMDlg::OnEraseBkgnd(CDC* pDC)
 		name.Format("L1电流:%.1fA",salve->Tcur[slaveindex][0]);
 		BkDc.TextOut(420,680,name);
 		name.Empty();
-		name.Format("水禁:%s",salve->Water[slaveindex]);
+		name.Format("水禁:%s",salve->Water[slaveindex]=="None."?"没有":salve->Water[slaveindex]=="Alarm."?"报警":"正常");		
 		BkDc.TextOut(420,700,name);
 
 		name.Empty();
@@ -361,15 +361,15 @@ BOOL CCanbinNPMDlg::OnEraseBkgnd(CDC* pDC)
 		BkDc.TextOut(420,740,name);
 
 		name.Empty();
-		name.Format("门禁1:%s",salve->Door1[slaveindex]);
+		name.Format("门禁1:%s",salve->Door1[slaveindex]=="None."?"没有":salve->Door1[slaveindex]=="Opened."?"打开":"正常");		
 		BkDc.TextOut(520,660,name);
 
 		name.Empty();
-		name.Format("门禁2:%s",salve->Door2[slaveindex]);
+		name.Format("门禁2:%s",salve->Door2[slaveindex]=="None."?"没有":salve->Door2[slaveindex]=="Opened."?"打开":"正常");
 		BkDc.TextOut(520,680,name);
 
 		name.Empty();
-		name.Format("烟雾:%s",salve->Smoke[slaveindex]);
+		name.Format("烟雾:%s",salve->Smoke[slaveindex]=="None."?"没有":salve->Smoke[slaveindex]=="Alarm."?"报警":"正常");
 		BkDc.TextOut(520,700,name);
 
 		name.Empty();

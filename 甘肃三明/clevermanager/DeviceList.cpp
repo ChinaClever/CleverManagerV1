@@ -79,6 +79,12 @@ BOOL CDeviceList::OnInitDialog()
 	TH[3] = 0;
 	TH[4] = 0;
 	TH[5] = 0;
+	TH[6] = 0;
+	TH[7] = 0;
+	Door1 = "没有";
+	Door2 = "没有";
+	Water = "没有";
+	Smoke = "没有";
 	energy[0]=0;
 	energy[1]=0;
 	energy[2]=0;
@@ -549,8 +555,8 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 						p_Objectnow->curalarm[i][j] = 1;
 						CString detail;
 						CString content;
-						detail.Format("PDU IP:%s->%d, %s-%s, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
-						content.Format("报警机房:%s,机柜:%s ",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+						detail.Format("PDU输出位电流报警 IP:%s->%d, %s-%s, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
+						content.Format("机房:%s,机柜:%s ",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 						writeUserLog(2,7,"PDU",content,detail);
 					//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 					   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -578,8 +584,8 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->Tcuralarm[i][j] = 1;
 					CString detail;
 					CString content;
-					detail.Format("PDU IP:%s->%d, %s-Line %d, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],j+1,p_Objectnow->Tcur[i][j],p_Objectnow->Tcurmin[i][j],p_Objectnow->Tcurmax[i][j]);
-					content.Format("报警机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+					detail.Format("PDU相报警 IP:%s->%d, %s-Line %d, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],j+1,p_Objectnow->Tcur[i][j],p_Objectnow->Tcurmin[i][j],p_Objectnow->Tcurmax[i][j]);
+					content.Format("机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -624,7 +630,7 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 			p_Objectnow->offlinerecord[i]=0;
 		}
 
-		for(j=0;j<6;j++)
+		for(j=0;j<8;j++)
 	   {
 		    if((p_Objectnow->THmin[i][j]>p_Objectnow->TH[i][j] || p_Objectnow->THmax[i][j]<p_Objectnow->TH[i][j]) && p_Objectnow->THmax[i][j]>0)
 		   {
@@ -634,11 +640,15 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->THalarm[i][j] = 1;
 					CString detail;
 					CString content;
-					if(i<3)
-					detail.Format("PDU温度%d报警 IP:%s->%d, %s, %d(%d-%d)°C",j+1,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
-					else
-					detail.Format("PDU湿度%d报警 IP:%s->%d, %s, %d(%d-%d)%%",j+1,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
-					content.Format("报警机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+					if(j<3)
+					detail.Format("PDU温度%d报警 IP:%s->%d, %s, %d℃(%d-%d)℃",j+1,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
+					else if(j>=3 && j<6)
+					detail.Format("PDU湿度%d报警 IP:%s->%d, %s, %d%%(%d-%d)%%",j+1-3,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
+					else if(j == 6)
+					detail.Format("PDU温度%d报警 IP:%s->%d, %s, %d℃(%d-%d)℃",j-2,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
+					else if(j == 7)
+					detail.Format("PDU湿度%d报警 IP:%s->%d, %s, %d%%(%d-%d)%%",j-3,p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->TH[i][j],p_Objectnow->THmin[i][j],p_Objectnow->THmax[i][j]);
+					content.Format("机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -658,8 +668,8 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->Door1alarm[i] = 1;
 					CString detail;
 					CString content;
-					detail.Format("PDU IP:%s->%d, 门禁1状态打开%s",p_Objectnow->ipaddr,i,p_Objectnow->Door1[i]);
-					content.Format("门禁1机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+					detail.Format("PDU门禁1报警 IP:%s->%d, 门禁1状态打开%s",p_Objectnow->ipaddr,i,p_Objectnow->Door1[i]);
+					content.Format("机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -679,7 +689,7 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->Door2alarm[i] = 1;
 					CString detail;
 					CString content;
-					detail.Format("PDU IP:%s->%d, 门禁2状态打开%s",p_Objectnow->ipaddr,i,p_Objectnow->Door2[i]);
+					detail.Format("PDU门禁2报警 IP:%s->%d, 门禁2状态打开%s",p_Objectnow->ipaddr,i,p_Objectnow->Door2[i]);
 					content.Format("门禁2机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
@@ -704,8 +714,8 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->Smokealarm[i] = 1;
 					CString detail;
 					CString content;
-					detail.Format("PDU IP:%s->%d, 烟禁状态不正常%s",p_Objectnow->ipaddr,i,p_Objectnow->Smoke[i]);
-					content.Format("烟禁机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+					detail.Format("PDU烟禁报警 IP:%s->%d, 烟禁状态不正常%s",p_Objectnow->ipaddr,i,p_Objectnow->Smoke[i]);
+					content.Format("机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -725,8 +735,8 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 					p_Objectnow->Wateralarm[i] = 1;
 					CString detail;
 					CString content;
-					detail.Format("PDU IP:%s->%d, 水禁状态不正常%s",p_Objectnow->ipaddr,i,p_Objectnow->Water[i]);
-					content.Format("水禁机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+					detail.Format("PDU水禁报警 IP:%s->%d, 水禁状态不正常%s",p_Objectnow->ipaddr,i,p_Objectnow->Water[i]);
+					content.Format("机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
 					writeUserLog(2,7,"PDU",content,detail);
 				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
 				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
@@ -991,6 +1001,12 @@ void CDeviceList::insertList(CString ip,CString slavename)
 					TH[3] = p_Objectnow->TH[i][3];
 					TH[4] = p_Objectnow->TH[i][4];
 					TH[5] = p_Objectnow->TH[i][5];
+					TH[6] = p_Objectnow->TH[i][6];
+					TH[7] = p_Objectnow->TH[i][7];
+					Door1 = p_Objectnow->Door1[i];
+					Door2 = p_Objectnow->Door2[i];
+					Water = p_Objectnow->Water[i];
+					Smoke = p_Objectnow->Smoke[i];
 					tp = p_Objectnow->devicetype[i];
 					return;
 				}
@@ -1152,10 +1168,10 @@ void CDeviceList::drawsenser(CDC *pDC)
 
 	drawFont(pDC,1,RGB(64,64,192));
 	value.Empty();
-	value.Format("T1: %d℃   T2: %d℃   T3: %d℃",TH[0],TH[1],TH[2]);
+	value.Format("T1: %d℃   T2: %d℃   T3: %d℃   T4: %d℃",TH[0],TH[1],TH[2],TH[6]);
 	pDC->TextOut(rect.Width()*44/100,rect.Height()*94/100,value);
 	value.Empty();
-	value.Format("H1: %d%s   H2: %d%s   H3: %d%s",TH[3],"%",TH[4],"%",TH[5],"%");
+	value.Format("H1: %d%s   H2: %d%s   H3: %d%s   H4: %d%s",TH[3],"%",TH[4],"%",TH[5],"%",TH[7],"%");
 	pDC->TextOut(rect.Width()*78/100,rect.Height()*94/100,value);
 	/////////////////////////
 
@@ -1166,11 +1182,18 @@ void CDeviceList::drawsenser(CDC *pDC)
 	strncpy_s(devicetp,sizeof(char)*32,tp,sizeof(char)*30);
 	pDC->TextOut(rect.Width()*78/100+75,rect.Height()*78/100,devicetp);
 	pDC->TextOut(rect.Width()*78/100+75,rect.Height()*82/100,location);
+
+	value.Empty();
+	value.Format("门禁1: %s   门禁2: %s   水禁: %s   烟禁: %s",Door1,Door2,Water,Smoke);
+	pDC->TextOut(rect.Width()*78/100,rect.Height()*86/100,value);
 	drawFont(pDC,0,RGB(64,64,64));
 	pDC->TextOut(rect.Width()*78/100,rect.Height()*70/100,"设备IP地址:");
 	pDC->TextOut(rect.Width()*78/100,rect.Height()*74/100,"设备名称:");
 	pDC->TextOut(rect.Width()*78/100,rect.Height()*78/100,"设备类型:");
 	pDC->TextOut(rect.Width()*78/100,rect.Height()*82/100,"设备位置:");
+
+
+	
 }
 
 void CDeviceList::OnDevDel()
@@ -1505,6 +1528,12 @@ void CDeviceList::insert_m_list(void)
 		TH[3] = p_select->TH[index][3];
 		TH[4] = p_select->TH[index][4];
 		TH[5] = p_select->TH[index][5];
+		TH[6] = p_select->TH[index][6];
+		TH[7] = p_select->TH[index][7];
+		Door1 = p_select->Door1[index]=="None."?"没有":p_select->Door1[index]=="Opened."?"打开":"正常";
+		Door2 = p_select->Door2[index]=="None."?"没有":p_select->Door2[index]=="Opened."?"打开":"正常";
+		Water = p_select->Water[index]=="None."?"没有":p_select->Water[index]=="Alarm."?"报警":"正常";
+		Smoke = p_select->Smoke[index]=="None."?"没有":p_select->Smoke[index]=="Alarm."?"报警":"正常";
 		energy[0]=p_select->TEnergy[index][0];
 		energy[1]=p_select->TEnergy[index][1];
 		energy[2]=p_select->TEnergy[index][2];

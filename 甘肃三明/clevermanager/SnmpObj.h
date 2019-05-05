@@ -37,12 +37,9 @@ public:
 				Tvol[i][j]=0;
 				Tcuralarm[i][j]=0;
 			}
-			TH[i][0]=0;
-			TH[i][1]=0;
-			TH[i][2]=0;
-			TH[i][3]=0;
-			TH[i][4]=0;
-			TH[i][5]=0;
+			for(j=0; j<8; j++)
+			TH[i][j]=0;
+
 			TEnergy[i][0]=0;
 			TEnergy[i][1]=0;
 			TEnergy[i][2]=0;
@@ -58,7 +55,7 @@ public:
 			Door2alarm[i]=0;
 			Smokealarm[i]=0;
 			Wateralarm[i]=0;
-			for(int k = 0 ; k < 6 ; k ++)
+			for(int k = 0 ; k < 8 ; k ++)
 			THalarm[i][k] = 0;
 
 		}
@@ -112,10 +109,10 @@ public:
 	int Tvol[10][3];
 	int Tvolmin[10][3];
 	int Tvolmax[10][3];
-	int TH[10][6];//123T 456H
-	int THmax[10][6];//123T 456H
-	int THmin[10][6];//123T 456H
-	int THalarm[10][6];
+	int TH[10][8];//123T 456H 梁業1-3 物業1-3 梁業4 物業4
+	int THmax[10][8];//123T 456H 梁業1-3 物業1-3 梁業4 物業4
+	int THmin[10][8];//123T 456H 梁業1-3 物業1-3 梁業4 物業4
+	int THalarm[10][8];//梁業1-3 物業1-3 梁業4 物業4
 	CString Door1[10];
 	CString Door2[10];
 	CString Smoke[10];

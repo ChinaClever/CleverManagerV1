@@ -1535,23 +1535,23 @@ void CStatusLogs::fillcurrent(float cur[24][60])
 	CString textout;
 	if((type.Find("功率"))>0)
 	{
-		textout.Format("单位: W(%d)  该时间段最大值为：%.1f(%d-%d),最小值为：%.1f（%d-%d） 时间（小时-分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
+		textout.Format("单位: W(%d)  该时间段最大值为：%.1f(%d:%d),最小值为：%.1f（%d:%d） 时间（小时:分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
 	}
 	else if((type.Find("电流"))>0)
 	{
-		textout.Format("单位: A(%d)  该时间段最大值为：%.1f(%d-%d),最小值为：%.1f（%d-%d） 时间（小时-分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
+		textout.Format("单位: A(%d)  该时间段最大值为：%.1f(%d:%d),最小值为：%.1f（%d:%d） 时间（小时:分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
 	}
 	else if((type.Find("电压"))>0)
 	{
-		textout.Format("单位: V(%d)  该时间段最大值为：%.1f(%d-%d),最小值为：%.1f（%d-%d） 时间（小时-分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
+		textout.Format("单位: V(%d)  该时间段最大值为：%.1f(%d:%d),最小值为：%.1f（%d:%d） 时间（小时:分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
 	}
 	else if((type.Find("温度"))>0)
 	{
-		textout.Format("单位: ℃(%d)  该时间段最大值为：%.1f(%d-%d),最小值为：%.1f（%d-%d） 时间（小时-分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
+		textout.Format("单位: ℃(%d)  该时间段最大值为：%.1f(%d:%d),最小值为：%.1f（%d:%d） 时间（小时:分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
 	}
 	else if((type.Find("湿度"))>0)
 	{
-		textout.Format("单位: %(%d)  该时间段最大值为：%.1f(%d-%d),最小值为：%.1f（%d-%d） 时间（小时-分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
+		textout.Format("单位: %(%d)  该时间段最大值为：%.1f(%d:%d),最小值为：%.1f（%d:%d） 时间（小时:分钟）",show_unit,search_max,search_max_wHour,search_max_wMinute,search_min,search_min_wHour,search_min_wMinute);
 	}
 	pDC->TextOut(50,120,textout);
 	/*drawFont(pDC,5,RGB(128,0,0));

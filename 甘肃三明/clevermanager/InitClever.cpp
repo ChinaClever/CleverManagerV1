@@ -1207,7 +1207,8 @@ void insertNPM_V(CString oid,CString value,CSnmpObj *p_Object)
 						p_Object->TH[deindex][1] = atoi(value =="Not found"?"0":value);
 					else if(zd[11]=="3")
 						p_Object->TH[deindex][2] = atoi(value =="Not found"?"0":value);
-					//else if(zd[11]=="4")
+					else if(zd[11]=="4")
+						p_Object->TH[deindex][6] = atoi(value =="Not found"?"0":value);
 
 					else if(zd[11]=="5")
 						p_Object->TH[deindex][3] = atoi(value =="Not found"?"0":value);
@@ -1215,7 +1216,8 @@ void insertNPM_V(CString oid,CString value,CSnmpObj *p_Object)
 						p_Object->TH[deindex][4] = atoi(value =="Not found"?"0":value);
 					else if(zd[11]=="7")
 						p_Object->TH[deindex][5] = atoi(value =="Not found"?"0":value);
-					//else if(zd[11]=="8")
+					else if(zd[11]=="8")
+						p_Object->TH[deindex][7] = atoi(value =="Not found"?"0":value);
 
 					else if(zd[11]=="9")
 					{
@@ -1247,71 +1249,71 @@ void insertNPM_V(CString oid,CString value,CSnmpObj *p_Object)
 					}
 					/////////////////////////////温湿度最小最大值2*6=12  
 					////////////////////.1.3.6.1.4.1.30966.7.1.6.13-
-					else if(zd[11]=="13")//
+					else if(zd[11]=="13")//温度1min
 					{
 						p_Object->THmin[deindex][0] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="14")
+					else if(zd[11]=="14")//温度1max
 					{
 						p_Object->THmax[deindex][0] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="15")
+					else if(zd[11]=="15")//温度2min
 					{
 						p_Object->THmin[deindex][1] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="16")
+					else if(zd[11]=="16")//温度2max
 					{
 						p_Object->THmax[deindex][1] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="17")//
+					else if(zd[11]=="17")//温度3min
 					{
 						p_Object->THmin[deindex][2] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="18")//
+					else if(zd[11]=="18")//温度3max
 					{
 						p_Object->THmax[deindex][2] = atoi(value =="Not found"?"0":value);
 					}
 					
-					//else if(zd[11]=="19")//
-					//{
-					//	
-					//}
-					//else if(zd[11]=="20")
-					//{
-					//	
-					//}
-					else if(zd[11]=="21")
+					else if(zd[11]=="19")//温度4min
+					{
+						p_Object->THmin[deindex][6] = atoi(value =="Not found"?"0":value);
+					}
+					else if(zd[11]=="20")//温度4max
+					{
+						p_Object->THmax[deindex][6] = atoi(value =="Not found"?"0":value);
+					}
+					else if(zd[11]=="21")//湿度1min
 					{
 						p_Object->THmin[deindex][3] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="22")
+					else if(zd[11]=="22")//湿度1max
 					{
 						p_Object->THmax[deindex][3] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="23")//
+					else if(zd[11]=="23")//湿度2min
 					{
 						p_Object->THmin[deindex][4] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="24")//
+					else if(zd[11]=="24")//湿度2max
 					{
 						p_Object->THmax[deindex][4] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="25")//
+					else if(zd[11]=="25")//湿度3min
 					{
 						p_Object->THmin[deindex][5] = atoi(value =="Not found"?"0":value);
 					}
-					else if(zd[11]=="26")//
+					else if(zd[11]=="26")//湿度3max
 					{
 						p_Object->THmax[deindex][5] = atoi(value =="Not found"?"0":value);
 					}
-					//else if(zd[11]=="27")//
-					//{
-					//	
-					//}
-					//else if(zd[11]=="28")//
-					//{
-					//	
-					//}
+					else if(zd[11]=="27")//湿度4min
+					{
+						p_Object->THmin[deindex][7] = atoi(value =="Not found"?"0":value);
+					}
+					else if(zd[11]=="28")//湿度4max
+					{
+						p_Object->THmax[deindex][7] = atoi(value =="Not found"?"0":value);
+					}
 				}
 				else if(zd[10]=="7")
 				{
