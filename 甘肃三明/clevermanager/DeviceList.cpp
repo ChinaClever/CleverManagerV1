@@ -81,10 +81,10 @@ BOOL CDeviceList::OnInitDialog()
 	TH[5] = 0;
 	TH[6] = 0;
 	TH[7] = 0;
-	Door1 = "没有";
-	Door2 = "没有";
-	Water = "没有";
-	Smoke = "没有";
+	Door1 = "未接入";
+	Door2 = "未接入";
+	Water = "未接入";
+	Smoke = "未接入";
 	energy[0]=0;
 	energy[1]=0;
 	energy[2]=0;
@@ -877,6 +877,14 @@ void CDeviceList::OnTimer(UINT_PTR nIDEvent)
 		value.Empty();
 		value.Format("%d",alarm);
 		pDC->TextOut(rect.Width()*20/100,rect.Height()-45,value);
+
+		ReleaseDC(pDC);
+		pDC = GetDC();
+		SetBkMode(pDC->GetSafeHdc(),TRANSPARENT);
+		CBrush brush2(RGB(233,240,249));
+		pDC->SelectObject(&brush2);
+		pDC->Rectangle(rect.Width()*28/100+6,rect.Height()*60/100+30,rect.Width(),rect.Height());
+		drawsenser(pDC);
 		ReleaseDC(pDC);
 
 		insert_m_list();
@@ -1530,10 +1538,10 @@ void CDeviceList::insert_m_list(void)
 		TH[5] = p_select->TH[index][5];
 		TH[6] = p_select->TH[index][6];
 		TH[7] = p_select->TH[index][7];
-		Door1 = p_select->Door1[index]=="None."?"没有":p_select->Door1[index]=="Opened."?"打开":"正常";
-		Door2 = p_select->Door2[index]=="None."?"没有":p_select->Door2[index]=="Opened."?"打开":"正常";
-		Water = p_select->Water[index]=="None."?"没有":p_select->Water[index]=="Alarm."?"报警":"正常";
-		Smoke = p_select->Smoke[index]=="None."?"没有":p_select->Smoke[index]=="Alarm."?"报警":"正常";
+		Door1 = p_select->Door1[index]=="None."?"未接入":p_select->Door1[index]=="Opened."?"打开":"关闭";
+		Door2 = p_select->Door2[index]=="None."?"未接入":p_select->Door2[index]=="Opened."?"打开":"关闭";
+		Water = p_select->Water[index]=="None."?"未接入":p_select->Water[index]=="Alarm."?"报警":"正常";
+		Smoke = p_select->Smoke[index]=="None."?"未接入":p_select->Smoke[index]=="Alarm."?"报警":"正常";
 		energy[0]=p_select->TEnergy[index][0];
 		energy[1]=p_select->TEnergy[index][1];
 		energy[2]=p_select->TEnergy[index][2];
