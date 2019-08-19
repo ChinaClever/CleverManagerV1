@@ -1848,7 +1848,7 @@ void callback( int reason, Snmp *snmp, Pdu &pdu, SnmpTarget &target, void *cd)
 			CAlarm mail;
 			CFile file;
 			file.Open(getFilePath()+"\\Uinfo\\mail",CFile::modeRead | CFile::modeCreate |CFile::modeNoTruncate);
-			PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
+		//	PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
 			file.SeekToBegin();
 			char smtpuser[128];
 			memset(smtpuser,0,sizeof(char)*128);
@@ -2375,8 +2375,8 @@ void CInitClever::snmpstart(void)
 
 	AfxBeginThread(snmprun,this);
 
-	trapstop = CreateEvent(NULL,true,false,"trap");
-	AfxBeginThread(snmpRecTrap,NULL);
+	//trapstop = CreateEvent(NULL,true,false,"trap");
+	//AfxBeginThread(snmpRecTrap,NULL);
 }
 
 //////////////////////////////////////

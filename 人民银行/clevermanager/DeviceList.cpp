@@ -11,8 +11,8 @@
 #include <windows.h>
 #include "Alarm.h"
 #include "MainFrm.h"
-#include   <mmsystem.h>   
-#pragma comment(lib,   "winmm.lib")   
+//#include   <mmsystem.h>   
+//#pragma comment(lib,   "winmm.lib")   
 // CDeviceList 对话框
 
 IMPLEMENT_DYNAMIC(CDeviceList, CDialog)
@@ -528,7 +528,7 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 	}
 
 	/////////////////////////===================== 2019 4 1 
-	
+
    for(i=0; i<10;i++)
    {
 	   if(p_Objectnow->slaveOffline[i]) p_Objectnow->slaveOffline[i]=1;
@@ -546,14 +546,12 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 
 				   if(p_Objectnow->curalarm[i][j] == 0) 
 					   {
-						p_Objectnow->curalarm[i][j] = 1;
-						CString detail;
-						CString content;
-						detail.Format("PDU IP:%s->%d, %s-%s, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
-						content.Format("报警机房:%s,机柜:%s ",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
-						writeUserLog(2,7,"PDU",content,detail);
-					//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
-					   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
+							p_Objectnow->curalarm[i][j] = 1;
+							CString detail;
+							CString content;
+							detail.Format("PDU IP:%s->%d, %s-%s, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
+							content.Format("报警机房:%s,机柜:%s ",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+							writeUserLog(2,7,"PDU",content,detail);
 				   }
 					
 					p_Objectnow->slaveOffline[i] = 2;
@@ -575,14 +573,12 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 
 				   if(p_Objectnow->Tcuralarm[i][j] == 0) 
 				   {
-					p_Objectnow->Tcuralarm[i][j] = 1;
-					CString detail;
-					CString content;
-					detail.Format("PDU IP:%s->%d, %s-Line %d, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],j+1,p_Objectnow->Tcur[i][j],p_Objectnow->Tcurmin[i][j],p_Objectnow->Tcurmax[i][j]);
-					content.Format("报警机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
-					writeUserLog(2,7,"PDU",content,detail);
-				//temail(p_Objectnow->ipaddr,p_Objectnow->slavename[i],p_Objectnow->outputname[i][j],p_Objectnow->curout[i][j],p_Objectnow->curmin[i][j],p_Objectnow->curmax[i][j]);
-				   PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
+						p_Objectnow->Tcuralarm[i][j] = 1;
+						CString detail;
+						CString content;
+						detail.Format("PDU IP:%s->%d, %s-Line %d, %.1f(%.1f-%.1f)A",p_Objectnow->ipaddr,i,p_Objectnow->slavename[i],j+1,p_Objectnow->Tcur[i][j],p_Objectnow->Tcurmin[i][j],p_Objectnow->Tcurmax[i][j]);
+						content.Format("报警机房:%s,机柜:%s",p_Objectnow->DCname,p_Objectnow->cabientname[i]);
+						writeUserLog(2,7,"PDU",content,detail);
 				   }
 				   
 				   p_Objectnow->slaveOffline[i] = 2;

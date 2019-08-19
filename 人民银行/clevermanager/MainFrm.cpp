@@ -11,7 +11,8 @@
 #define new DEBUG_NEW
 #endif
 
-
+#include   <mmsystem.h>   
+#pragma comment(lib,   "winmm.lib")   
 // CMainFrame
 
 IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
@@ -172,6 +173,8 @@ LONG CMainFrame::msgWriteLogs(WPARAM wParam,LPARAM lParam)
 			memset(value,0,sizeof(char)*128);
 			strncpy_s(value,sizeof(char)*128,detail,sizeof(char)*126);
 			file.Write(value,128);
+			PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
+
 				/*
 			CRect   rt; 
 			GetWindowRect(&rt);
