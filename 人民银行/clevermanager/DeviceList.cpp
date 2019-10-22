@@ -456,7 +456,7 @@ bool CDeviceList::checkList(HTREEITEM hitem,CString name,CSnmpObj *p_Objectnow)
 	while(NULL != hSon)
 	{
 	   CString textname = m_tree.GetItemText(hSon);
-	   if( textname==name && name.GetLength())
+	   if( textname==name && name.GetLength()&& name!="--")
 	   {
 		   if(p_Objectnow->status==1)
 		   {
@@ -621,7 +621,7 @@ void CDeviceList::checkSonList(HTREEITEM hitem,CSnmpObj *p_Objectnow)
 	for(i=0;i<10;i++)
 	{
 		CString name = p_Objectnow->slavename[i];
-		if(name.GetLength())
+		if(name.GetLength()&&name != "--")
 		{
 			bool flags = false;
 			if(i) name.Format("¸±»ú%d£º %s",i, name);
@@ -706,7 +706,7 @@ void CDeviceList::OnTimer(UINT_PTR nIDEvent)
 				int i;
 				for(i=0;i<10;i++)
 				{
-					if(p_Objectnow->slaveOffline[i]==0 && p_Objectnow->slavename[i].GetLength())
+					if(p_Objectnow->slaveOffline[i]==0 && p_Objectnow->slavename[i].GetLength()&&p_Objectnow->slavename[i]!="--")
 					{
 						off++;
 					}

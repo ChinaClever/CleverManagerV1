@@ -1045,6 +1045,7 @@ void insertNPM_V(CString oid,CString value,CSnmpObj *p_Object)
 		if(zd[9] == "1"&&zd[10] == "1")
 		{
 			p_Object->slavename[deindex] = value;
+			if(value == "--") return;
 			p_Object->shousuo[deindex]=1;
 		}
 		else if(zd[10] == "2")
@@ -1628,7 +1629,7 @@ UINT CInitClever::snmprun(LPVOID p)
 					{
 
 						//start_1 = clock();////////test
-						//elseret = true;
+						//elseret = true;//test
 
 						if(count < 5) //Delay
 						{
@@ -1664,7 +1665,7 @@ UINT CInitClever::snmprun(LPVOID p)
 			CString ip = p_Object->ipaddr;
 			if(ip.GetLength()  && p_Object->dtype==0 && p_Object->npmtype==2)
 			{
-				//start_2 = clock();
+				//start_2 = clock();//test
 				if(!NPM_Vsnmpread(p_Object))
 				{
 					p_Object->status = 0;

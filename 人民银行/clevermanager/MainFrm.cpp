@@ -173,6 +173,7 @@ LONG CMainFrame::msgWriteLogs(WPARAM wParam,LPARAM lParam)
 			memset(value,0,sizeof(char)*128);
 			strncpy_s(value,sizeof(char)*128,detail,sizeof(char)*126);
 			file.Write(value,128);
+			if(name=="PDU")
 			PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
 
 				/*
