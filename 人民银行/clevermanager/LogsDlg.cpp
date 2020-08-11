@@ -178,7 +178,8 @@ BOOL CLogsDlg::OnInitDialog()
 	m_tree.ModifyStyle(0,TVS_HASBUTTONS   |   TVS_LINESATROOT   |   TVS_HASLINES);
 	m_tree.SetImageList ( &m_cImageListTree,TVSIL_NORMAL );
 	treeinsert();
-	SetTimer(IDS_LOGS_TIME,10*60*1000,NULL);
+	SetTimer(IDS_LOGS_TIME,10*60*1000,NULL);//IDS_SHOWLOGS_TIME
+	SetTimer(IDS_SHOWLOGS_TIME,5000,NULL);
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常: OCX 属性页应返回 FALSE
 }
@@ -481,6 +482,22 @@ void CLogsDlg::OnTimer(UINT_PTR nIDEvent)
 		{
 			treeinsert();
 			refreshlisttimer = st.wDay;
+		}
+	}
+	if(IDS_SHOWLOGS_TIME== nIDEvent)
+	{
+		if(gShowFlag==true)
+		{
+			CTime et;
+			m_time.GetTime(et);
+			CString filename;
+			filename.Format("%4d%2d%2d",et.GetYear(),et.GetMonth(),et.GetDay());
+			filename.Replace(" ","0");
+
+			m_list.DeleteAllItems();
+			treeloginsert(filename,1);
+			treeloginsert(filename,2);
+			gShowFlag = false;
 		}
 	}
 

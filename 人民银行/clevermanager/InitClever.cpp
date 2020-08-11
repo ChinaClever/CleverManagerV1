@@ -34,6 +34,7 @@ CInitClever::~CInitClever(void)
 void CInitClever::initData(void)
 {
 	//dataCenterWrite();
+	gShowFlag = false;//自动刷新日志标志位
 	int i;
 	for(i=0;i<10;i++)
 	{

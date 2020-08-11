@@ -1,7 +1,6 @@
 // MainFrm.h : CMainFrame 类的接口
 //
 
-
 #pragma once
 
 class CMainFrame : public CFrameWnd

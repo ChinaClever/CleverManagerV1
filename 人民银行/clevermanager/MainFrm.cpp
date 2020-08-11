@@ -173,8 +173,12 @@ LONG CMainFrame::msgWriteLogs(WPARAM wParam,LPARAM lParam)
 			memset(value,0,sizeof(char)*128);
 			strncpy_s(value,sizeof(char)*128,detail,sizeof(char)*126);
 			file.Write(value,128);
-			if(name=="PDU")
+			//if(name=="PDU")//所有报警都发出响声，之前离线是没有响声
 			PlaySound("ALARM1.WAV",   NULL,  SND_FILENAME | SND_ASYNC);
+
+			gShowFlag = true;
+			
+
 
 				/*
 			CRect   rt; 

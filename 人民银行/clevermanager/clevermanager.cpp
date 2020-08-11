@@ -44,6 +44,7 @@ CObList snmpobj;
 CString currentIP1;//当前查看IP
 CString currentIP2;//当前查看IP
 userinfo user[20];
+bool gShowFlag;//自动刷新日志标志位false//不刷新 true //刷新
 
 CString changevalue(CString strHex)
 {

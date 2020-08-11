@@ -79,6 +79,7 @@ extern CString getFilePath(void);
 extern void drawImagePNG(CDC *pDC,CString src,int px,int py,int w,int h);
 extern void drawFont(CDC *pDC,int type,COLORREF color);
 extern datacenter DCmember[10];
+extern bool gShowFlag;
 extern CObList snmpobj;
 extern CString currentIP1;
 extern CString currentIP2;

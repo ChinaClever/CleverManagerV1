@@ -217,6 +217,7 @@
 #define ID_32877                        32877
 #define ID_32878                        32878
 #define ID_32879                        32879
+#define IDS_SHOWLOGS_TIME                   32880
 
 // Next default values for new objects
 // 
