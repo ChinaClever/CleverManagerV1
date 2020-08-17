@@ -1164,12 +1164,12 @@ CString list(char *url)
 				CString tab;
 				if(p_Object->npmtype==1)
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-IV");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				else
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-III");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				tab.Format("\"text\":\"%s\",\"children\":[",p_Object->ipaddr);
@@ -1218,12 +1218,12 @@ CString list(char *url)
 				CString tab;
 				if(p_Object->npmtype==1)
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-IV");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				else
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-III");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				tab.Format("\"text\":\"%s\",\"children\":[",p_Object->ipaddr);
@@ -1271,12 +1271,12 @@ CString list(char *url)
 				CString tab;
 				if(p_Object->npmtype==1)
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-IV");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				else
 				{
-					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-III");
+					tab.Format("\"text\":\"%s\",\"children\":[{","NPM-V");
 					body +=tab;
 				}
 				tab.Format("\"text\":\"%s\"",p_Object->ipaddr);
@@ -1479,7 +1479,7 @@ CString list(char *url)
 								{
 									tab.Empty();
 									tab.Format("{\"id1\":\"%d\",\"id2\":\"%s\",\"id3\":\"<span style='color:%s'>%s</span>\",\
-											   \"id4\":\"<span style='color:%s'>%.1f A</span>\",\"id5\":\"%.1f A\",\"id6\":\"%.1f A\",\"id7\":\"%.2f KVA\"}"
+											   \"id4\":\"<span style='color:%s'>%.1f A</span>\",\"id5\":\"%.1f A\",\"id6\":\"%.1f A\",\"id7\":\"%.2f VA\"}"
 											   ,k+1,p_Object->outputname[i][j],
 											   p_Object->outputstatus[i][j]=="ON"?"00aa00":"000000",p_Object->outputstatus[i][j],
 											   (p_Object->curout[i][j]<p_Object->curmin[i][j] || p_Object->curout[i][j]>p_Object->curmax[i][j])?"aa0000":"00aa00",

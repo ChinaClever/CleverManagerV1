@@ -1856,7 +1856,7 @@ void CMakeSureDlg::makesure(void)
 			file.Write(start,32);
 			file.Close();
 			writeUserLog(1,6,username,"WEB服务编辑",username+"修改了WEB服务设置.");
-			MessageBox("请重启软件，是修改的设定生效.");
+			MessageBox("请重启软件，使修改的配置生效.");
 			onok=true;
 			
 

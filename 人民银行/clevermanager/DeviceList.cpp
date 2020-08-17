@@ -1000,9 +1000,9 @@ void CDeviceList::drawsenser(CDC *pDC)
 
 	value.Empty();
 	if(vol[1]>50)
-		value.Format("L1: %.2f W    L2: %.2f W    L3: %.2f W",cur[0]*vol[0],cur[1]*vol[1],cur[2]*vol[2]);
+		value.Format("L1: %.2f VA    L2: %.2f VA    L3: %.2f VA",cur[0]*vol[0],cur[1]*vol[1],cur[2]*vol[2]);
 	else
-		value.Format("L1: %.1f W",cur[0]*vol[0]);
+		value.Format("L1: %.1f VA",cur[0]*vol[0]);
 
 	pDC->TextOut(rect.Width()*44/100,rect.Height()*82/100,value);
 

@@ -24,10 +24,6 @@ else if(page==4)\
 {\
 document.getElementById('frm').src = 'list.html';\
 }\
-else if(page==6)\
-{\
-document.getElementById('frm').src = 'emsats.html';\
-}\
 else if(page==5)\
 {\
 document.getElementById('frm').src = 'logs.html';\
@@ -65,7 +61,6 @@ MM_reloadPage(true);\
 <li><a href='#' onClick='clk(2);'>统计信息</a></li>\
 <li><a href='#' onClick='clk(3);'>环境状态</a></li>\
 <li><a href='#' onClick='clk(4);'>NPM设备列表</a></li>\
-<li><a href='#' onClick='clk(6);'>EMS&ATS列表</a></li>\
 <li><a href='#' onClick='clk(5);'>日志查看</a></li>\
 </ul>\
 </div>\
